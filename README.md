@@ -110,19 +110,19 @@ Pada tahap ini juga dilihat jumlah masing- masing dari tingkat obesitas yaitu No
 
 ![Gambar 1a. Analisis Univariat (Data Kategori: Gender)](https://github.com/user-attachments/assets/c067f9b3-84b3-472c-912b-6b60c2238a2b)
 
-Gambar 1a. Analisis Univariat (Data Kategori: Gender
+**Gambar 1a. Analisis Univariat (Data Kategori: Gender**
 
 Terlihat bahwa jumlah laki-laki (Male) sedikit lebih banyak dibandingkan perempuan (Female), dengan sekitar 510 laki-laki dan 460 perempuan. Perbedaan ini tidak terlalu signifikan, sehingga distribusi gender dalam data cukup seimbang.
 
 ![Gambar 1b. Analisis Univariat (Data Kategori: ObesityCategory)](https://github.com/user-attachments/assets/b71c3b0a-89d4-4439-b6d8-200dbe81c713)
 
-Gambar 1b. Analisis Univariat (Data Kategori: ObesityCategory)
+**Gambar 1b. Analisis Univariat (Data Kategori: ObesityCategory)**
 
 Grafik di atas menunjukkan distribusi kategori obesitas dalam dataset. Kategori dengan jumlah tertinggi adalah Normal weight, diikuti oleh Overweight, Obese, dan yang paling sedikit adalah Underweight. Hal ini menunjukkan bahwa mayoritas individu dalam dataset memiliki berat badan normal, sedangkan jumlah penderita obesitas dan underweight relatif lebih sedikit. 
 
 ![Gambar 2a. Analisis  Univariat (Data Numerik: Age dan Height)](https://github.com/user-attachments/assets/49177494-3ca2-489b-8399-4336b4761b02)
 
-Gambar 2a. Analisis  Univariat (Data Numerik: Age dan Height)
+**Gambar 2a. Analisis  Univariat (Data Numerik: Age dan Height)**
 
 Pada grafik sebelah kiri, distribusi usia tampak cukup merata dengan sedikit puncak di usia tertentu seperti sekitar 20, 30, 40, dan 70 tahun. Hal ini menunjukkan bahwa tidak ada dominasi usia tertentu, namun ada kecenderungan kelompok usia tertentu muncul lebih sering, mungkin karena faktor sampling atau karakteristik populasi yang dikaji.
 
@@ -130,7 +130,7 @@ Sementara itu, grafik sebelah kanan menunjukkan distribusi tinggi badan yang men
 
 ![Gambar 2b. Analisis  Univariat (Data Numerik: Weight dan BMI)](https://github.com/user-attachments/assets/bd8eddba-9e31-40af-a467-c1c95c596586)
 
-Gambar 2b. Analisis  Univariat (Data Numerik: Weight dan BMI)
+**Gambar 2b. Analisis  Univariat (Data Numerik: Weight dan BMI)**
 
 Histogram kiri berjudul "Weight" yang menampilkan distribusi berat badan dengan rentang sekitar 30 sampai 110 (mungkin dalam satuan kg). Distribusinya terlihat miring sedikit ke kiri dengan puncak di sekitar 75-80.
 
@@ -138,13 +138,13 @@ Histogram kanan berjudul "BMI" yang menunjukkan distribusi Indeks Massa Tubuh (B
 
 ![Gambar 2c. Analisis  Univariat (Data Numerik: PhysicalActivityLevel dan ObesityCategory_num)](https://github.com/user-attachments/assets/de5d7457-4eaf-4103-9e8d-dad5309ccaef)
 
-Gambar 2c. Analisis  Univariat (Data Numerik: PhysicalActivityLevel dan ObesityCategory_num)
+**Gambar 2c. Analisis  Univariat (Data Numerik: PhysicalActivityLevel dan ObesityCategory_num)**
 
 
 # EDA - Multivariat Analysis
 ![Gambar 3a Jumlah Obesity Category berdasarkan Gender](https://github.com/user-attachments/assets/7d9925ae-20ca-4f7d-a9bf-3b368e9b16a4)
 
-Gambar 3a Jumlah Obesity Category berdasarkan Gender
+**Gambar 3a Jumlah Obesity Category berdasarkan Gender**
 
 Grafik di atas menunjukkan distribusi kategori obesitas berdasarkan gender. Terlihat bahwa baik pada pria maupun wanita, kategori dengan jumlah individu terbanyak adalah Normal weight. Pada pria, jumlah individu dengan berat badan normal lebih tinggi dibanding wanita, dengan selisih yang cukup signifikan. Sementara itu, kategori Overweight lebih banyak ditemukan pada wanita dibandingkan pria, menunjukkan kecenderungan kelebihan berat badan yang sedikit lebih besar di kelompok wanita. Untuk kategori Obese dan Underweight, jumlahnya relatif seimbang antara pria dan wanita, meskipun tetap menunjukkan sedikit penurunan pada kelompok wanita.
 
@@ -152,13 +152,13 @@ Grafik di atas menunjukkan distribusi kategori obesitas berdasarkan gender. Terl
 
 ![Gambar 3b hubungan antar fitur numerik](https://github.com/user-attachments/assets/09bd8691-a53c-4b22-8088-4d043a9a222a)
 
-Gambar 3b hubungan antar fitur numerik
+**Gambar 3b hubungan antar fitur numerik**
 
 Gambar pairplot menunjukkan hubungan antar fitur numerik dalam dataset. Terlihat korelasi positif yang kuat antara Weight dan BMI, serta antara BMI dan ObesityCategory_num, yang wajar karena kategori obesitas diturunkan dari nilai BMI. Sebaliknya, Height berkorelasi negatif dengan BMI. Distribusi tiap fitur juga tampak normal, terutama pada Height, Weight, dan BMI. Sementara PhysicalActivityLevel tidak menunjukkan pola korelasi yang jelas dengan fitur lain, menunjukkan pengaruhnya terhadap obesitas mungkin tidak langsung. Visualisasi ini membantu memahami data dan memilih fitur yang relevan untuk pemodelan.
 
 ![Gambar 3c Correlation Matrix untuk Fitur Numerik](https://github.com/user-attachments/assets/5742a8b4-ed08-4d76-ae90-3721d6a3f367)
 
-Gambar 3c Correlation Matrix untuk Fitur Numerik
+**Gambar 3c Correlation Matrix untuk Fitur Numerik**
  
 Berdasarkan hasil visualisasi matriks korelasi pada fitur numerik, dapat disimpulkan bahwa fitur yang paling berpengaruh dalam menentukan tingkat obesitas (ObesityCategory_num) adalah BMI, dengan nilai korelasi sebesar 0,94. Hal ini menunjukkan bahwa BMI memiliki hubungan yang sangat kuat dengan klasifikasi tingkat obesitas. Selain itu, berat badan (Weight) juga menunjukkan korelasi yang cukup tinggi terhadap tingkat obesitas, yaitu sebesar 0,82, sedangkan tinggi badan (Height) memiliki korelasi negatif sebesar -0,40. Korelasi negatif ini wajar, mengingat tinggi badan merupakan salah satu komponen dalam perhitungan BMI.
 
@@ -166,9 +166,9 @@ Sebaliknya, fitur usia (Age) dan tingkat aktivitas fisik (PhysicalActivityLevel)
 
 Selanjutnya, dilakukan analisis Principal Component Analysis (PCA) yang menunjukkan bahwa fitur Weight dan BMI memiliki korelasi yang sangat tinggi. Oleh karena itu, perlu diperhatikan pemilihan fitur yang digunakan dalam model agar tidak terjadi masalah multikolinearitas, yang dapat mempengaruhi stabilitas dan interpretabilitas model.
 
-![Gambar 5 analisis Principal Component Analysis (PCA)](https://github.com/user-attachments/assets/8292602a-fd09-4a99-90ac-623c23113dd0)
+![Gambar 4 analisis Principal Component Analysis (PCA)](https://github.com/user-attachments/assets/8292602a-fd09-4a99-90ac-623c23113dd0)
 
-Gambar 5 analisis Principal Component Analysis (PCA)
+**Gambar 4 analisis Principal Component Analysis (PCA)**
 
 ## Data Preparation
 
@@ -176,15 +176,15 @@ Pada tahap Data Preparation dilakuan pemetaan kategori ObesityCategory ke angka 
 
 Hasil pemetaan kategori ObesityCategory ke angka pada kolom ObesityCategory_num dengan aturan 'Underweight': 1, 'Normal weight': 2, 'Overweight': 3, dan 'Obese': 4 adalah sebagai berikut:
 
-![Gambar 4 Hasil pemetaan kategori ObesityCategory ke angka pada kolom ObesityCategory_num](https://github.com/user-attachments/assets/0706f5dc-2318-4647-a38e-b55080418023)
+![Gambar 5 Hasil pemetaan kategori ObesityCategory ke angka pada kolom ObesityCategory_num](https://github.com/user-attachments/assets/0706f5dc-2318-4647-a38e-b55080418023)
 
-Gambar 4 Hasil pemetaan kategori ObesityCategory ke angka pada kolom ObesityCategory_num
+**Gambar 5 Hasil pemetaan kategori ObesityCategory ke angka pada kolom ObesityCategory_num**
 
 Hasil transformasi One-Hot Encoding tersebut dapat dilihat pada gambar berikut.
 
-![Gambar 5 Hasil Transformasi One-Hot Encoding](https://github.com/user-attachments/assets/61d30bfc-b68c-4bc1-b157-eaac9631a2e0)
+![Gambar 6 Hasil Transformasi One-Hot Encoding](https://github.com/user-attachments/assets/61d30bfc-b68c-4bc1-b157-eaac9631a2e0)
 
-Gambar 5 Hasil Transformasi One-Hot Encoding
+**Gambar 6 Hasil Transformasi One-Hot Encoding**
 
 Pada proyek ini, digunakan metode Train Test Split dari library sklearn.model_selection untuk membagi dataset menjadi data latih dan data uji dengan perbandingan 90:10 serta menggunakan random_state sebesar 123 untuk menjaga konsistensi pembagian data. 
 
@@ -245,9 +245,9 @@ Berikut adalah hasil evaluasi untuk masing-masing model.
 | KNN           | 0.683673   |
 | SVM           | 0.357143   |
 
-![Gambar 6 Hasil Akurasi](https://github.com/user-attachments/assets/1f2a5e80-7747-42ab-99a9-470350a3c6f2)
+![Gambar 7 Hasil Akurasi](https://github.com/user-attachments/assets/1f2a5e80-7747-42ab-99a9-470350a3c6f2)
 
-Gambar 6 Hasil Akurasi
+**Gambar 7 Hasil Akurasi**
 
 Dari hasil evaluasi tersebut, terlihat bahwa Random Forest memiliki akurasi paling tinggi dibandingkan KNN dan SVM, menjadikannya model terbaik dalam konteks klasifikasi tingkat obesitas pada dataset ini.
 
