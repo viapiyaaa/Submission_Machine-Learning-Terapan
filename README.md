@@ -241,11 +241,11 @@ Berikut adalah hasil evaluasi untuk masing-masing model.
 
 | Model         | Accuracy   |
 |---------------|------------|
-| RandomForest  | 0.928571   |
+| RandomForest  | 0.938776   |
 | KNN           | 0.683673   |
 | SVM           | 0.357143   |
 
-![Gambar 7 Hasil Akurasi](https://github.com/user-attachments/assets/1f2a5e80-7747-42ab-99a9-470350a3c6f2)
+![Gambar 7 Hasil Akurasi](https://github.com/user-attachments/assets/1a36108d-2bb6-4d77-97fc-b1dfe085cee6)
 
 **Gambar 7 Hasil Akurasi**
 
