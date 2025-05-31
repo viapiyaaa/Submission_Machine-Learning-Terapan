@@ -160,7 +160,7 @@ Sebaliknya, fitur usia (Age) dan tingkat aktivitas fisik (PhysicalActivityLevel)
 
 Pada tahap preparation dilakukan penghapusan outlier dengan metode Interquartile Range (IQR), menggabungkan fitur 'Weight' dan 'BMI' menjadi fitur baru 'WeightBMICombined' dengan melakukan Principal Component Analysis (PCA), melakukan pemetaan kategori ObesityCategory ke angka di kolom ObesityCategory_num, dan transformasi data seperti One-Hot Encoding pada variabel kategorikal, , agar variabel tersebut dapat direpresentasikan dalam bentuk numerik yang sesuai untuk pelatihan model machine learning.
 
-Untuk menghapus outlier digunakan metode Interquartile Range (IQR). Metode IQR bekerja dengan menghitung kuartil pertama (Q1) dan kuartil ketiga (Q3) dari data, kemudian dihitung dengan mengurangkan kuartil ketiga (Q3) dengan kuartil pertama (Q1), sesuai rumus berikut:
+Untuk menghapus outlier digunakan metode Interquartile Range (IQR). Metode ini dilakukan dengan menghitung kuartil pertama (Q1) dan kuartil ketiga (Q3) dari data. Nilai IQR kemudian diperoleh dengan menggunakan rumus berikut:
 
 **𝐼𝑄𝑅** = 𝑄3 − 𝑄1
 
@@ -170,8 +170,8 @@ Dimana:
 
 Berdasarkan nilai IQR ini, ditentukan batas bawah dan batas atas yang berfungsi sebagai ambang untuk mengidentifikasi nilai-nilai yang dianggap ekstrem atau menyimpang dari pola umum data. Data yang berada di luar rentang tersebut dikategorikan sebagai outlier dan dihapus dari dataset. Adapun rumus dari batas bawah dan batas atas adalah sebagai berikut:
 
-Batas atas = Q3 + 1,5 × IQR 
-Batas Bawah = Q1 - 1,5 × IQR
+**Batas atas** = Q3 + 1,5 × IQR 
+**Batas Bawah** = Q1 - 1,5 × IQR
 
 Setelah menerapkan metode IQR untuk menghilangkan outlier, sebanyak 26 data terdeteksi sebagai outlier dan dikeluarkan dari analisis. Akibatnya, jumlah data dalam dataset berkurang dari **1000 menjadi 974.**
 
