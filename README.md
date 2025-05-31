@@ -87,15 +87,7 @@ Dalam tahap Exploratory Data Analysis (EDA), dilakukan beberapa langkah utama, y
   - Outlier, yaitu data yang menyimpang jauh dari pola umum.
 - Data Cleaning: Tahap ini mencakup penanganan terhadap data duplikat, nilai hilang (missing values), dan outlier untuk memastikan data bersih dan siap digunakan dalam proses analisis dan pemodelan lebih lanjut.
 
-Pada proyek kasus ini, tidak ditemukan adanya data duplikat maupun nilai yang hilang (missing value). Namun, terdapat outlier yang akan diatasi menggunakan metode dropping berdasarkan metode Interquartile Range (IQR). IQR dihitung dengan mengurangkan kuartil ketiga (Q3) dengan kuartil pertama (Q1), sesuai rumus berikut:
-
-**𝐼𝑄𝑅** = 𝑄3 − 𝑄1
-
-Dimana:
-𝑄1 adalah kuartil pertama
-𝑄3 adalah kuartil ketiga
-
-Setelah menerapkan metode IQR untuk menghilangkan outlier, jumlah data dalam dataset berkurang menjadi 974 dari sebelumnya 1000 data.
+Pada proyek kasus ini, tidak ditemukan adanya data duplikat maupun nilai yang hilang (missing value). Namun, terdapat outlier yang akan diatasi menggunakan metode dropping berdasarkan metode Interquartile Range (IQR). 
 
 Pada tahap ini juga dilihat jumlah masing- masing dari tingkat obesitas yaitu Normal weight, Overweight, Obese, dan Underweight, yang ditunjukkan pada tabel di bawwah ini.
 
@@ -164,15 +156,30 @@ Berdasarkan hasil visualisasi matriks korelasi pada fitur numerik, dapat disimpu
 
 Sebaliknya, fitur usia (Age) dan tingkat aktivitas fisik (PhysicalActivityLevel) menunjukkan korelasi yang sangat rendah terhadap tingkat obesitas, masing-masing sebesar -0,06 dan 0,03. Ini mengindikasikan bahwa pengaruh keduanya terhadap klasifikasi obesitas dalam dataset ini relatif kecil. Dengan demikian, fitur BMI, berat badan, dan tinggi badan dapat dianggap sebagai variabel paling penting, dan sebaiknya dijadikan fokus utama dalam pembangunan model prediktif tingkat obesitas.
 
-Selanjutnya, dilakukan analisis Principal Component Analysis (PCA) yang menunjukkan bahwa fitur Weight dan BMI memiliki korelasi yang sangat tinggi. Oleh karena itu, perlu diperhatikan pemilihan fitur yang digunakan dalam model agar tidak terjadi masalah multikolinearitas, yang dapat mempengaruhi stabilitas dan interpretabilitas model.
+## Data Preparation
+
+Pada tahap preparation dilakukan penghapusan outlier dengan metode Interquartile Range (IQR), menggabungkan fitur 'Weight' dan 'BMI' menjadi fitur baru 'WeightBMICombined' dengan melakukan Principal Component Analysis (PCA), melakukan pemetaan kategori ObesityCategory ke angka di kolom ObesityCategory_num, dan transformasi data seperti One-Hot Encoding pada variabel kategorikal, , agar variabel tersebut dapat direpresentasikan dalam bentuk numerik yang sesuai untuk pelatihan model machine learning.
+
+Untuk menghapus outlier digunakan metode Interquartile Range (IQR). Metode IQR bekerja dengan menghitung kuartil pertama (Q1) dan kuartil ketiga (Q3) dari data, kemudian dihitung dengan mengurangkan kuartil ketiga (Q3) dengan kuartil pertama (Q1), sesuai rumus berikut:
+
+**𝐼𝑄𝑅** = 𝑄3 − 𝑄1
+
+Dimana:
+𝑄1 adalah kuartil pertama
+𝑄3 adalah kuartil ketiga
+
+Berdasarkan nilai IQR ini, ditentukan batas bawah dan batas atas yang berfungsi sebagai ambang untuk mengidentifikasi nilai-nilai yang dianggap ekstrem atau menyimpang dari pola umum data. Data yang berada di luar rentang tersebut dikategorikan sebagai outlier dan dihapus dari dataset. Adapun rumus dari batas bawah dan batas atas adalah sebagai berikut:
+
+Batas atas = Q3 + 1,5 × IQR 
+Batas Bawah = Q1 - 1,5 × IQR
+
+Setelah menerapkan metode IQR untuk menghilangkan outlier, sebanyak 26 data terdeteksi sebagai outlier dan dikeluarkan dari analisis. Akibatnya, jumlah data dalam dataset berkurang dari **1000 menjadi 974.**
+
+Selanjutnya, dilakukan proses Principal Component Analysis (PCA) dengan tujuan mereduksi dimensi data serta mengatasi masalah multikolinearitas. Dalam hal ini, fitur 'Weight' dan 'BMI' digabungkan menjadi satu fitur baru bernama 'WeightBMICombined'. Penggabungan ini dilakukan karena kedua fitur tersebut memiliki nilai korelasi yang sangat tinggi, yang dapat menyebabkan informasi yang tumpang tindih dalam model. Setelah pembentukan fitur baru, fitur 'Weight' dan 'BMI' dihapus dari dataset untuk menghindari redundansi data.
 
 ![Gambar 4 analisis Principal Component Analysis (PCA)](https://github.com/user-attachments/assets/8292602a-fd09-4a99-90ac-623c23113dd0)
 
 **Gambar 4 analisis Principal Component Analysis (PCA)**
-
-## Data Preparation
-
-Pada tahap Data Preparation dilakuan pemetaan kategori ObesityCategory ke angka di kolom ObesityCategory_num dan transformasi data seperti One-Hot Encoding pada variabel kategorikal, agar variabel tersebut dapat direpresentasikan dalam bentuk numerik yang sesuai untuk pelatihan model machine learning. 
 
 Hasil pemetaan kategori ObesityCategory ke angka pada kolom ObesityCategory_num dengan aturan 'Underweight': 1, 'Normal weight': 2, 'Overweight': 3, dan 'Obese': 4 adalah sebagai berikut:
 
@@ -241,11 +248,11 @@ Berikut adalah hasil evaluasi untuk masing-masing model.
 
 | Model         | Accuracy   |
 |---------------|------------|
-| RandomForest  | 0.938776   |
+| RandomForest  | 0.918367   |
 | KNN           | 0.683673   |
 | SVM           | 0.357143   |
 
-![Gambar 7 Hasil Akurasi](https://github.com/user-attachments/assets/1a36108d-2bb6-4d77-97fc-b1dfe085cee6)
+![Gambar 7 Hasil Akurasi](https://github.com/user-attachments/assets/92ef91fc-c7e8-4409-a1b5-d4fd2ae3cd98)
 
 **Gambar 7 Hasil Akurasi**
 
